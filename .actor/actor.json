@@ -1,0 +1,14 @@
+{
+  "actorSpecification": 1,
+  "name": "fast-youtube-comments-scraper-v2",
+  "title": "Fast YouTube Comments Scraper v2",
+  "description": "Scrape YouTube comments and replies from multiple videos with custom limits, Top or Newest sorting, and date filters. Export text, dates, likes, author names, and thread details to JSON or CSV for audience research, feedback analysis, and engagement tracking.",
+  "version": "0.1",
+  "defaultMemoryMbytes": 1024,
+  "dockerfile": "../Dockerfile",
+  "input": "./input_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  },
+  "output": "./output_schema.json"
+}

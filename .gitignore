@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.env
+.env.*
+storage/
+benchmark-results/
+exports/
+.pytest_cache/
+reports/
+ACTOR_SPEC.md
+REQUIREMENTS.md
+assets/*-prompts.txt
+assets/actor-icon-apify.json

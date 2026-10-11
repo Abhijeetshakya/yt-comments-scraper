@@ -1,0 +1,12 @@
+*
+!Dockerfile
+!.dockerignore
+!requirements.txt
+!requirements.lock
+!README.md
+!src/
+!src/**
+!.actor/
+!.actor/**
+**/__pycache__/**
+**/*.pyc

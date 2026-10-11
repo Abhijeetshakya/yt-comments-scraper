@@ -1,0 +1,25 @@
+{
+  "title": "YouTube comments",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "videos": {
+      "title": "Videos and comment amounts", "type": "array", "editor": "schemaBased",
+      "description": "Parents and replies count together. Each omitted amount defaults to 100. Identical videos are deduplicated; conflicting amounts are rejected.",
+      "items": {"type": "object", "properties": {
+        "url": {"title": "Video URL", "type": "string", "editor": "textfield", "description": "A YouTube watch, share, Shorts, live or embed URL containing a video ID."},
+        "maxComments": {"title": "Maximum records", "type": "integer", "editor": "number", "default": 100, "minimum": 1, "description": "Combined maximum number of comments and replies for this video. Defaults to 100."}
+      }, "required": ["url"]}
+    },
+    "sort": {"title": "Comment sorting", "type": "string", "editor": "select", "enum": ["newest", "top"], "enumTitles": ["Newest first", "Top comments"], "default": "newest", "description": "API relevance ordering and YouTube's public Top comments ordering can differ."},
+    "publishedAfter": {"title": "Scrape comments published after", "type": "string", "editor": "textfield", "description": "Only comments and replies published on or after this date are included. Enter YYYY-MM-DD or an age such as 1 day (today) or 2 days (yesterday and today). Uses UTC calendar days. Automatically resets sorting to Newest first. Replies are collected within qualifying top-level threads. Leave empty to disable."},
+    "includeReplies": {"title": "Include replies", "type": "boolean", "default": true, "description": "Reply requests can add time. Replies count toward the amount for each video."},
+    "maxRepliesPerThread": {"title": "Maximum replies per thread", "type": "integer", "editor": "number", "minimum": 1, "description": "Leave unset for no additional reply cap."},
+    "maxTotalComments": {"title": "Maximum records across the run", "type": "integer", "editor": "number", "minimum": 1, "description": "Optional shared limit. Allocation between concurrent videos depends on arrival order."},
+    "publicDetails": {"title": "Public details (slower)", "type": "array", "editor": "select", "items": {"type": "string", "enum": ["pinned", "creatorHeart", "nestedReplies"], "enumTitles": ["Pinned comments", "Creator hearts", "Nested reply relationships"]}, "default": [], "description": "One additional public pass. API text, dates and likes remain authoritative; unavailable details remain null."},
+    "enableFallback": {"title": "Verify empty API responses publicly", "type": "boolean", "default": true, "description": "Retries empty responses once, then verifies with yt-dlp in the same extraction session."},
+    "maxConcurrency": {"title": "Concurrent API videos", "type": "integer", "editor": "number", "default": 3, "minimum": 1, "maximum": 20, "description": "Workers share the private key. Public extraction is limited to two workers; reply requests to four across the run."},
+    "videoTimeoutSeconds": {"title": "Active processing timeout per video", "type": "integer", "editor": "number", "default": 180, "minimum": 1, "description": "Excludes waiting in the video queue. Covers extraction and optional enrichment; partial records are retained."}
+  },
+  "required": ["videos"]
+}

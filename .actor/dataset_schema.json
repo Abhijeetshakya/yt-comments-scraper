@@ -1,0 +1,377 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "type": "object",
+    "properties": {
+      "commentId": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "commentUrl": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "text": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "publishedAt": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "updatedAt": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "likeCount": {
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "authorName": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "isCreatorReply": {
+        "type": [
+          "boolean",
+          "null"
+        ]
+      },
+      "isReply": {
+        "type": [
+          "boolean",
+          "null"
+        ]
+      },
+      "parentId": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "threadRootId": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "parentRelationship": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "replyCount": {
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "fetchedReplyCount": {
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "isPinned": {
+        "type": [
+          "boolean",
+          "null"
+        ]
+      },
+      "heartedByCreator": {
+        "type": [
+          "boolean",
+          "null"
+        ]
+      },
+      "videoId": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "videoUrl": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "videoTitle": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "videoChannelId": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "source": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "publicDetailsSource": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "sort": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "scrapedAt": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "publishedAtPrecision": {
+        "type": [
+          "string",
+          "null"
+        ]
+      }
+    },
+    "required": [
+      "commentId",
+      "commentUrl",
+      "text",
+      "publishedAt",
+      "updatedAt",
+      "likeCount",
+      "authorName",
+      "isCreatorReply",
+      "isReply",
+      "parentId",
+      "threadRootId",
+      "parentRelationship",
+      "replyCount",
+      "fetchedReplyCount",
+      "isPinned",
+      "heartedByCreator",
+      "videoId",
+      "videoUrl",
+      "videoTitle",
+      "videoChannelId",
+      "source",
+      "publicDetailsSource",
+      "sort",
+      "scrapedAt",
+      "publishedAtPrecision"
+    ],
+    "additionalProperties": false
+  },
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "transformation": {
+        "fields": [
+          "videoTitle",
+          "authorName",
+          "text",
+          "publishedAt",
+          "likeCount",
+          "isReply",
+          "fetchedReplyCount",
+          "commentUrl"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "videoTitle": {
+            "label": "videoTitle",
+            "format": "text"
+          },
+          "authorName": {
+            "label": "authorName",
+            "format": "text"
+          },
+          "text": {
+            "label": "text",
+            "format": "text"
+          },
+          "publishedAt": {
+            "label": "publishedAt",
+            "format": "date"
+          },
+          "likeCount": {
+            "label": "likeCount",
+            "format": "number"
+          },
+          "isReply": {
+            "label": "isReply",
+            "format": "boolean"
+          },
+          "fetchedReplyCount": {
+            "label": "fetchedReplyCount",
+            "format": "number"
+          },
+          "commentUrl": {
+            "label": "commentUrl",
+            "format": "link"
+          }
+        }
+      }
+    },
+    "details": {
+      "title": "Details",
+      "transformation": {
+        "fields": [
+          "commentId",
+          "commentUrl",
+          "text",
+          "publishedAt",
+          "updatedAt",
+          "likeCount",
+          "authorName",
+          "isCreatorReply",
+          "isReply",
+          "parentId",
+          "threadRootId",
+          "parentRelationship",
+          "replyCount",
+          "fetchedReplyCount",
+          "isPinned",
+          "heartedByCreator",
+          "videoId",
+          "videoUrl",
+          "videoTitle",
+          "videoChannelId",
+          "source",
+          "publicDetailsSource",
+          "sort",
+          "scrapedAt",
+          "publishedAtPrecision"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "commentId": {
+            "label": "commentId",
+            "format": "text"
+          },
+          "commentUrl": {
+            "label": "commentUrl",
+            "format": "link"
+          },
+          "text": {
+            "label": "text",
+            "format": "text"
+          },
+          "publishedAt": {
+            "label": "publishedAt",
+            "format": "date"
+          },
+          "updatedAt": {
+            "label": "updatedAt",
+            "format": "date"
+          },
+          "likeCount": {
+            "label": "likeCount",
+            "format": "number"
+          },
+          "authorName": {
+            "label": "authorName",
+            "format": "text"
+          },
+          "isCreatorReply": {
+            "label": "isCreatorReply",
+            "format": "boolean"
+          },
+          "isReply": {
+            "label": "isReply",
+            "format": "boolean"
+          },
+          "parentId": {
+            "label": "parentId",
+            "format": "text"
+          },
+          "threadRootId": {
+            "label": "threadRootId",
+            "format": "text"
+          },
+          "parentRelationship": {
+            "label": "parentRelationship",
+            "format": "text"
+          },
+          "replyCount": {
+            "label": "replyCount",
+            "format": "number"
+          },
+          "fetchedReplyCount": {
+            "label": "fetchedReplyCount",
+            "format": "number"
+          },
+          "isPinned": {
+            "label": "isPinned",
+            "format": "boolean"
+          },
+          "heartedByCreator": {
+            "label": "heartedByCreator",
+            "format": "boolean"
+          },
+          "videoId": {
+            "label": "videoId",
+            "format": "text"
+          },
+          "videoUrl": {
+            "label": "videoUrl",
+            "format": "link"
+          },
+          "videoTitle": {
+            "label": "videoTitle",
+            "format": "text"
+          },
+          "videoChannelId": {
+            "label": "videoChannelId",
+            "format": "text"
+          },
+          "source": {
+            "label": "source",
+            "format": "text"
+          },
+          "publicDetailsSource": {
+            "label": "publicDetailsSource",
+            "format": "text"
+          },
+          "sort": {
+            "label": "sort",
+            "format": "text"
+          },
+          "scrapedAt": {
+            "label": "scrapedAt",
+            "format": "date"
+          },
+          "publishedAtPrecision": {
+            "label": "publishedAtPrecision",
+            "format": "text"
+          }
+        }
+      }
+    }
+  }
+}

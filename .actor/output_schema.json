@@ -1,0 +1,8 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "Comments and per-video summaries",
+  "properties": {
+    "comments": {"title": "Comments", "type": "string", "description": "Comments and replies. Use the dataset Export button to download JSON or CSV.", "template": "{{links.apiDefaultDatasetUrl}}/items"},
+    "summaries": {"title": "Per-video summaries", "type": "string", "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/OUTPUT"}
+  }
+}
